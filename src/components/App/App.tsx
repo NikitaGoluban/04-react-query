@@ -31,6 +31,8 @@ export default function App() {
       queryKey: ['movies', searchQuery, page],
       queryFn: ({ signal }) => fetchMovies(searchQuery, page, signal),
       enabled: searchQuery.length > 0,
+      placeholderData: (previousData, previousQuery) =>
+        previousQuery?.queryKey[1] === searchQuery ? previousData : undefined,
     });
 
   const movies = data?.results ?? [];

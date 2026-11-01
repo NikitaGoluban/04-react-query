@@ -30,6 +30,7 @@ On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
 - Movie search with validation for empty or whitespace-only input.
 - TanStack Query manages response caching, loading, errors, and cancellation through Axios. The query key contains the search text and page. Results stay fresh for one minute.
+- Previous results remain visible while another page of the same search loads. Starting a different search clears them.
 - React Paginate displays navigation above the gallery when `total_pages` is greater than one. The API uses one-based pages; the pagination component uses zero-based indices.
 - Navigation respects [TMDB's maximum of 500 pages](https://developer.themoviedb.org/docs/errors), including searches that report more pages.
 - A new search resets the page to one and clears the previous selection. Submitting the same search again on page one retries the request.
